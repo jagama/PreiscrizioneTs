@@ -5,8 +5,8 @@ import { Users } from "./users";
 let User = new Users.TestedUser(
     "mario@gmail.com",
     true,
-    "Mario",
-    "Rossi",
+    "mario",
+    "rossi",
     "+39113467876",
     "MROSSI80A01E801W",
     [7, 9]
@@ -14,8 +14,8 @@ let User = new Users.TestedUser(
 let User2 = new Users.TestedUser(
     "luca@gmail.com",
     true,
-    "Luca",
-    "Verdi",
+    "luca",
+    "verdi",
     "+39123367829",
     "LCAVRD80A01E801W",
     [7, 9]
@@ -23,8 +23,8 @@ let User2 = new Users.TestedUser(
 let User3 = new Users.TestedUser(
     "fede@gmail.com",
     true,
-    "Federico",
-    "Bianchi",
+    "federico",
+    "bianchi",
     "+39125067832",
     "FDEBCI80A01E809Z",
     [7, 9]
@@ -43,10 +43,10 @@ groupUsers.push(User3);
 const search = (x?: string, y?: string, z?: string, a?: string, b?: string) =>
     groupUsers.filter((i: Users.TestedUser) => {
         return (
-            i.name === x ||
-            i.surName === y ||
+            i.name === x.toLowerCase() ||
+            i.surName === y.toLowerCase() ||
             i.email.getEmail() === z ||
-            i.codiceFiscale.getCodiceFiscale() === a ||
+            i.codiceFiscale.getCodiceFiscale() === a.toUpperCase() ||
             i.telefono.getNumero() === b
         );
     });
