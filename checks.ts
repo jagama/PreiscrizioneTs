@@ -97,7 +97,7 @@ export class Graduatoria {
     }
     private validate(n: number) {
         //controllo voti
-        //non mettere n=NaN perche in Js Not-a-Number è un valore particolare del TIPO Number.
+        //si mette n=NaN perche in Js Not-a-Number è un valore particolare del TIPO Number.
         //Il controllo sul NaN va eseguito come : èUnNumero(numero) => isNaN(number).
         // https://eslint.org/docs/rules/use-isnan
         if (n == null || isNaN(n)) throw new Error("Voto Vuoto");
