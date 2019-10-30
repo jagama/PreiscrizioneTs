@@ -40,16 +40,22 @@ groupUsers.push(User3);
 
 //filter usando parametri in ingresso e output new array
 //per codiceFiscale, email and numero uso proprio get()
-const search = (x?: string, y?: string, z?: string, a?: string, b?: string) =>
-    groupUsers.filter((i: Users.TestedUser) => {
-        return (
-            i.name === x.toLowerCase() ||
-            i.surName === y.toLowerCase() ||
-            i.email.getEmail() === z ||
-            i.codiceFiscale.getCodiceFiscale() === a.toUpperCase() ||
-            i.telefono.getNumero() === b
-        );
+const search = (x?: string, y?: string, z?: string, a?: string, b?: string) =>{
+
+    let res =  groupUsers.filter((i:Users.TestedUser) => {
+        return(i.name === x.toLowerCase() ||
+        i.surName === y.toLowerCase() ||
+        i.email.getEmail() === z ||
+        i.codiceFiscale.getCodiceFiscale() === a.toUpperCase() ||
+        i.telefono.getNumero() === b)
     });
 
+    if(res.length != 0){
+        return res;
+    }
+    return 'utente non trovato';
+}
+
+
 //testing
-console.log(search("Luca"));
+console.log(search('','','','',''));
