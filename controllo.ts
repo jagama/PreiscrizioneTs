@@ -9,7 +9,7 @@ let User = new Users.TestedUser(
     "rossi",
     "+39113467876",
     "MROSSI80A01E801W",
-    [7, 9]
+    [6, 7]
 );
 let User2 = new Users.TestedUser(
     "luca@gmail.com",
@@ -27,7 +27,7 @@ let User3 = new Users.TestedUser(
     "bianchi",
     "+39125067832",
     "FDEBCI80A01E809Z",
-    [7, 9]
+    [8, 9]
 );
 
 //creo array di Users
