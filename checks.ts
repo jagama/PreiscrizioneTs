@@ -13,7 +13,7 @@ export class Telefono {
     //controllo del numero
     private validate(n: string): string {
         if (n === "" || n === null)
-            //se vuoto o null
+            //se vuoto o nullzz
             throw new Error("Numero Di Telefono Vuoto");
         if (n.length < 12 || n.length > 13)
             // se min o sup
