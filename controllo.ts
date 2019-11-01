@@ -40,14 +40,14 @@ groupUsers.push(User3);
 
 //filter usando parametri in ingresso e output new array
 //per codiceFiscale, email and numero uso proprio get()
-const search = (x?: string, y?: string, z?: string, a?: string, b?: string) =>{
+const search = (x:string) =>{
 
     let res =  groupUsers.filter((i:Users.TestedUser) => {
         return(i.name === x.toLowerCase() ||
-        i.surName === y.toLowerCase() ||
-        i.email.getEmail() === z ||
-        i.codiceFiscale.getCodiceFiscale() === a.toUpperCase() ||
-        i.telefono.getNumero() === b)
+        i.surName === x.toLowerCase() ||
+        i.email.getEmail() === x ||
+        i.codiceFiscale.getCodiceFiscale() === x.toUpperCase() ||
+        i.telefono.getNumero() === x)
     });
 
     let positive:string = res;
@@ -59,4 +59,4 @@ const search = (x?: string, y?: string, z?: string, a?: string, b?: string) =>{
 
 
 //testing
-console.log(search('Luca','','','',''));
+console.log(search('Luca'));
