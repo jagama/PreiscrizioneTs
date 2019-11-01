@@ -38,10 +38,11 @@ groupUsers.push(User);
 groupUsers.push(User2);
 groupUsers.push(User3);
 
-//filter usando parametri in ingresso e output new array
-//per codiceFiscale, email and numero uso proprio get()
+//filter usando un solo param in ingresso e output new array
+//per codiceFiscale, email and numero uso get()
 const search = (x:string) =>{
 
+    //                    filtro      iteratore
     let res =  groupUsers.filter((i:Users.TestedUser) => {
         return(i.name === x.toLowerCase() ||
         i.surName === x.toLowerCase() ||
@@ -50,9 +51,11 @@ const search = (x:string) =>{
         i.telefono.getNumero() === x)
     });
 
+    //variabile d'uscita  positvo || negativo
     let positive:string = res;
     let negative:string = 'utente non trovato'
 
+    //verifico se in res "eisiste il dato", se si returno positive; se no returno negative
     return (res.length != 0) ? positive : negative;
 
 }
