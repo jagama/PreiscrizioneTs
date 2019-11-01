@@ -50,10 +50,11 @@ const search = (x?: string, y?: string, z?: string, a?: string, b?: string) =>{
         i.telefono.getNumero() === b)
     });
 
-    if(res.length != 0){
-        return res;
-    }
-    return 'utente non trovato';
+    let positive:string = res;
+    let negative:string = 'utente non trovato'
+
+    return (res.length != 0) ? positive : negative;
+
 }
 
 
